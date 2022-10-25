@@ -19,7 +19,7 @@
                     include "koneksi.php";
                     $qry_histori=mysqli_query($conn,"select *,transaksi.id_transaksi AS id_transaksi from transaksi join member on transaksi.id_member = member.id_member order by transaksi.id_transaksi desc");
                     $no=0;
-                    while($dt_histori=mysqli_fetch_array($qry_histori)){
+                    while($dt_histori=mysqli_fetch_array($qry_histori)){ 
                         $no++;
                         $button_lunas="<a href='lunas.php?id=".$dt_histori['id_transaksi']."' class='btn btn-success' onclick='return confirm(\"Apakah anda yakin?\")'>Lunas</a>";
                         $button_proses="<a href='update_transaksi.php?id=".$dt_histori['id_transaksi']."' class='btn btn-primary' onclick='return confirm(\"Apakah anda yakin?\")'>Proses</a>";
